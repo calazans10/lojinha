@@ -56,6 +56,7 @@ ROOT_URLCONF = 'lojinha.urls'
 
 WSGI_APPLICATION = 'lojinha.wsgi.application'
 
+POSTGRESPASSWORD = os.environ.get('POSTGRESPASSWORD')
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
@@ -65,7 +66,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'lojinha-db',
         'USER': 'postgres',
-        'PASSWORD': '',
+        'PASSWORD': POSTGRESPASSWORD,
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
