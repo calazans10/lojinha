@@ -1,9 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 
 class Client(models.Model):
-    user = models.ForeignKey(User)
+    user = models.OneToOneField('auth.User', related_name="client")
     cpf = models.CharField(max_length=14)
     born_on = models.DateField()
 
