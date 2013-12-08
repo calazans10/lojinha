@@ -1,9 +1,10 @@
 from django.contrib import admin
+from metadata.admin import MetaDataTabularInline
 from products.models import Product, Category
 
 
 class ProductAdmin(admin.ModelAdmin):
-    pass
+    inlines = [MetaDataTabularInline]
 
 
 class CategoryAdmin(admin.ModelAdmin):
