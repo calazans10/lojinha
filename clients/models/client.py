@@ -8,6 +8,9 @@ class Client(TimeStampedModel):
     born_on = models.DateField('Nascido em')
     addresses = models.ManyToManyField('Address', verbose_name="Endereços")
 
+    def __str__(self):
+        return self.user.get_full_name()
+
     class Meta:
         app_label = 'clients'
         db_table = 'client'

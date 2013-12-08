@@ -38,6 +38,7 @@ INSTALLED_APPS = (
 
     'django_extensions',
     'model_utils',
+    'metadata',
     'south',
     'mptt',
 

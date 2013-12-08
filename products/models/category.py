@@ -8,6 +8,9 @@ class Category(MPTTModel, TimeStampedModel):
     parent = TreeForeignKey('self', null=True, blank=True,
                             related_name='children', verbose_name="Pai")
 
+    def __str__(self):
+        return self.name
+
     class MPTTMeta:
         order_insertion_by = ['name']
 
