@@ -4,6 +4,9 @@ from products.models import Product, Category
 
 
 class ProductAdmin(admin.ModelAdmin):
+    list_display = ('id', 'code', 'title', 'price', 'category',)
+    list_select_related = ('category',)
+    search_fields = ['code', 'title', 'description']
     inlines = [MetaDataTabularInline]
 
 
