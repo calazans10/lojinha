@@ -7,7 +7,7 @@ from metadata.models import MetaData
 class Product(TimeStampedModel):
     code = models.CharField('Código', max_length=20)
     title = models.CharField('Título', max_length=120)
-    description = models.CharField('Descrição', max_length=255)
+    description = models.CharField('Descrição', max_length=1500)
     price = models.DecimalField('Preço', max_digits=12, decimal_places=2)
     category = models.ForeignKey('Category', related_name='products',
                                  verbose_name='Categoria')
