@@ -1,24 +1,17 @@
-"""
-Django settings for lojinha project.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.6/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.6/ref/settings/
-"""
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+import sys
+from unipath import Path
+
+
+BASE_DIR = Path(__file__).parent.parent
+
+sys.path.append(BASE_DIR.child('apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'px5c-^_0g)82!9h@n)h#y8@#k-dx9_%dx!lf_j#$berbav3f3#'
+SECRET_KEY = os.environ.get('LOJINHASECRETKEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 TEMPLATE_DEBUG = True
@@ -26,8 +19,6 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 INTERNAL_IPS = ('127.0.0.1',)
-
-# Application definition
 
 INSTALLED_APPS = (
     'django.contrib.admin',
