@@ -1,97 +1,18 @@
-{% load mptt_tags %}
+{% extends 'core/base.html' %}
 
-<!doctype html>
-<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
-<html class="no-js" lang="pt-BR" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lojinha</title>
+{% block content %}
+  <div class="large-8 columns">
+    <div class="row">
+      {% for product in products %}
+        <div class="large-4 small-6 columns">
+          <img src="http://placehold.it/1000x1000&text=Thumbnail">
 
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/foundation.css" />
-    <script src="{{ STATIC_URL }}js/modernizr.js"></script>
-</head>
-<body>
-   <div class="row" style="padding-top: 40px;">
-    <div class="large-12 columns">
-
-      <div class="row">
-
-  <!-- Side Bar -->
-
-        <div class="large-4 small-12 columns">
-
-          <img src="{{STATIC_URL}}img/logo.png" style="margin-bottom: 30px;">
-
-          <div class="hide-for-small panel">
-            <h3>Categorias</h3>
-            <ul class="root">
-              {% recursetree nodes %}
-                <li>
-                  {{ node.name }}
-                  {% if not node.is_leaf_node %}
-                    <ul class="children">
-                      {{ children }}
-                    </ul>
-                  {% endif %}
-                </li>
-              {% endrecursetree %}
-            </ul>
-          </div>
-
-          <!--a href="#">
-          <div class="panel callout radius">
-            <h6>99  items in your cart</h6>
-          </div>
-          </a-->
-
-        </div>
-
-    <!-- End Side Bar -->
-
-
-    <!-- Thumbnails -->
-
-        <div class="large-8 columns">
-          <div class="row">
-            {% for product in products %}
-              <div class="large-4 small-6 columns">
-                <img src="http://placehold.it/1000x1000&text=Thumbnail">
-
-                <div class="panel">
-                  <h5>{{ product.title|truncatechars:30 }}</h5>
-                  <h6 class="subheader">R$ {{ product.price }}</h6>
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-
-    <!-- End Thumbnails -->
-
+          <div class="panel">
+            <h5>{{ product.title|truncatechars:30 }}</h5>
+            <h6 class="subheader">R$ {{ product.price }}</h6>
           </div>
         </div>
-      </div>
-
-
-    <!-- Footer -->
-
-      <footer class="row">
-        <div class="large-12 columns"><hr />
-          <div class="row">
-            <div class="large-6 columns">
-              <p>Copyright © 2013 - All Rights Reserved - Lojinha</p>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-    <!-- End Footer -->
-
+      {% endfor %}
     </div>
   </div>
-
-  <script src="{{ STATIC_URL }}js/jquery.js"></script>
-  <script src="{{ STATIC_URL }}js/templates/foundation.js"></script>
-</body>
-</html>
+{% endblock content %}

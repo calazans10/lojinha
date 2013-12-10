@@ -1,0 +1,31 @@
+
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="pt-BR" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lojinha</title>
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/foundation.css" />
+    <script src="{{ STATIC_URL }}js/modernizr.js"></script>
+</head>
+<body>
+   <div class="row" style="padding-top: 40px;">
+    <div class="large-12 columns">
+
+      <div class="row">
+          {% include "core/menu.html" %}
+          {% block content %}{% endblock content %}
+      </div>
+
+      {% include "core/footer.html" %}
+
+    </div>
+  </div>
+
+  <script src="{{ STATIC_URL }}js/jquery.js"></script>
+  <script src="{{ STATIC_URL }}js/templates/foundation.js"></script>
+</body>
+</html>
