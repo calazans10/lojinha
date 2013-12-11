@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}css/foundation.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
     <script src="{{ STATIC_URL }}js/modernizr.js"></script>
 </head>
 <body>
@@ -15,7 +16,7 @@
     <div class="large-12 columns">
 
       <div class="row">
-          {% include "core/menu.html" %}
+          {% include "core/header.html" %}
           {% block content %}{% endblock content %}
       </div>
 

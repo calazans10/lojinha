@@ -1,0 +1,29 @@
+{%if product.category.name == 'Livro' %}
+    <li><strong>Autor:</strong> {{ product.metadata.autor }}</li>
+    <li><strong>Gênero:</strong> {{ product.metadata.genero }}</li>
+{% endif %}
+
+{%if product.category.name == 'DVD show' %}
+    <li><strong>Artista:</strong> {{ product.metadata.artista }}</li>
+    <li><strong>Número de música:</strong> {{ product.metadata.numero_de_musicas }}</li>
+{% endif %}
+
+{%if product.category.name == 'DVD filme' %}
+    <li><strong>Diretor:</strong> {{ product.metadata.diretor }}</li>
+    <li><strong>Ano de lançamento:</strong> {{ product.metadata.ano_lancamento }}</li>
+{% endif %}
+
+{%if product.category.name == 'DVD software' %}
+    <li><strong>Versão:</strong> {{ product.metadata.versao }}</li>
+    <li><strong>Requisitos do sistema:</strong> {{ product.metadata.requisitos_do_sistema }}</li>
+{% endif %}
+
+{%if product.category.name == 'Relógios' %}
+    <li><strong>Marca:</strong> {{ product.metadata.marca }}</li>
+    <li><strong>Tipo:</strong> {{ product.metadata.tipo }}</li>
+{% endif %}
+
+{%if product.category.name == 'Perfume' %}
+    <li><strong>Marca:</strong> {{ product.metadata.marca }}</li>
+    <li><strong>Quantidade (ml):</strong> {{ product.metadata.quantidade_em_ml }}</li>
+{% endif %}

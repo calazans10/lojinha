@@ -15,9 +15,10 @@ class Migration(SchemaMigration):
             ('modified', self.gf('model_utils.fields.AutoLastModifiedField')(default=datetime.datetime.now)),
             ('code', self.gf('django.db.models.fields.CharField')(max_length=20)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=120)),
-            ('description', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('price', self.gf('django.db.models.fields.DecimalField')(max_digits=12, decimal_places=2)),
-            ('category', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['products.Category'], related_name='products')),
+            ('description', self.gf('django.db.models.fields.CharField')(max_length=1500)),
+            ('price', self.gf('django.db.models.fields.DecimalField')(decimal_places=2, max_digits=12)),
+            ('category', self.gf('django.db.models.fields.related.ForeignKey')(related_name='products', to=orm['products.Category'])),
+            ('quantity', self.gf('django.db.models.fields.IntegerField')()),
         ))
         db.send_create_signal('products', ['Product'])
 
@@ -27,7 +28,7 @@ class Migration(SchemaMigration):
             ('created', self.gf('model_utils.fields.AutoCreatedField')(default=datetime.datetime.now)),
             ('modified', self.gf('model_utils.fields.AutoLastModifiedField')(default=datetime.datetime.now)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=50)),
-            ('parent', self.gf('mptt.fields.TreeForeignKey')(blank=True, to=orm['products.Category'], related_name='children', null=True)),
+            ('parent', self.gf('mptt.fields.TreeForeignKey')(blank=True, null=True, related_name='children', to=orm['products.Category'])),
             ('lft', self.gf('django.db.models.fields.PositiveIntegerField')(db_index=True)),
             ('rght', self.gf('django.db.models.fields.PositiveIntegerField')(db_index=True)),
             ('tree_id', self.gf('django.db.models.fields.PositiveIntegerField')(db_index=True)),
@@ -46,26 +47,27 @@ class Migration(SchemaMigration):
 
     models = {
         'products.category': {
-            'Meta': {'object_name': 'Category', 'db_table': "'category'"},
+            'Meta': {'db_table': "'category'", 'object_name': 'Category'},
             'created': ('model_utils.fields.AutoCreatedField', [], {'default': 'datetime.datetime.now'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'level': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'}),
             'lft': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'}),
             'modified': ('model_utils.fields.AutoLastModifiedField', [], {'default': 'datetime.datetime.now'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '50'}),
-            'parent': ('mptt.fields.TreeForeignKey', [], {'blank': 'True', 'to': "orm['products.Category']", 'related_name': "'children'", 'null': 'True'}),
+            'parent': ('mptt.fields.TreeForeignKey', [], {'blank': 'True', 'null': 'True', 'related_name': "'children'", 'to': "orm['products.Category']"}),
             'rght': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'}),
             'tree_id': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'})
         },
         'products.product': {
-            'Meta': {'object_name': 'Product', 'db_table': "'product'"},
-            'category': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['products.Category']", 'related_name': "'products'"}),
+            'Meta': {'db_table': "'product'", 'object_name': 'Product'},
+            'category': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'products'", 'to': "orm['products.Category']"}),
             'code': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
             'created': ('model_utils.fields.AutoCreatedField', [], {'default': 'datetime.datetime.now'}),
-            'description': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'description': ('django.db.models.fields.CharField', [], {'max_length': '1500'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'modified': ('model_utils.fields.AutoLastModifiedField', [], {'default': 'datetime.datetime.now'}),
-            'price': ('django.db.models.fields.DecimalField', [], {'max_digits': '12', 'decimal_places': '2'}),
+            'price': ('django.db.models.fields.DecimalField', [], {'decimal_places': '2', 'max_digits': '12'}),
+            'quantity': ('django.db.models.fields.IntegerField', [], {}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '120'})
         }
     }

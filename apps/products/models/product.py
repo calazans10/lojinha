@@ -11,6 +11,7 @@ class Product(TimeStampedModel):
     price = models.DecimalField('Preço', max_digits=12, decimal_places=2)
     category = models.ForeignKey('Category', related_name='products',
                                  verbose_name='Categoria')
+    quantity = models.IntegerField('Quantidade em estoque')
     metadata = generic.GenericRelation(MetaData)
 
     def __str__(self):

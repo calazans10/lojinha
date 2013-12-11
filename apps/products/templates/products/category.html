@@ -1,0 +1,6 @@
+{% if product.category.is_child_node %}
+    <li><strong>Categoria:</strong> {{ product.category.parent.name }}</li>
+    <li><strong>Subcategoria:</strong> {{ product.category.name }}</li>
+{% else %}
+    <li><strong>Categoria:</strong> {{ product.category.name }}</li>
+{% endif %}

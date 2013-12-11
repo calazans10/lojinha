@@ -3,6 +3,7 @@
 {% block content %}
   <div class="large-8 columns">
     <div class="row">
+    {% if products %}
       {% for product in products %}
         <div class="large-4 small-6 columns">
           <img src="http://placehold.it/1000x1000&text=Thumbnail">
@@ -13,6 +14,9 @@
           </div>
         </div>
       {% endfor %}
+    {% else %}
+        <p>Esta categoria não possui nenhum produto ainda.</p>
+    {% endif %}
     </div>
   </div>
 {% endblock content %}
