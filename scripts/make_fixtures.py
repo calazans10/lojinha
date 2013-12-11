@@ -1,5 +1,6 @@
 from decimal import Decimal
 from django.db.models.loading import get_model
+from scripts.descriptions import *
 from products.models import Category, Product
 
 
@@ -63,10 +64,37 @@ def make_data():
     relogios = make_category('Relógios')
     perfume = make_category('Perfume')
 
-    description = 'Gravado ao vivo durante diferentes datas da turnê "New World Tour" em 1993, este DVD traz o genial Paul McCartney interpretando os grandes sucessos de sua carreira, além de hits que foram consagrados pelos inesquecíveis The Beatles.'
     metadata = {'artista': 'Paul McCartney', 'numero_de_musicas': 27}
-    make_product('0001', 'Paul McCartney - Paul is Live', description,
+    make_product('0001', 'Paul McCartney - Paul is Live', DESCRIPTION1,
                  Decimal('22.41'), dvd_show, 3, metadata)
+
+    metadata = {'autor': 'Guilherme Fiuza', 'genero': 'Biografia'}
+    make_product('0002', 'Bussunda - A vida do Casseta', DESCRIPTION2,
+                 Decimal(53.90), livro, 2, metadata)
+
+    metadata = {
+        'autor': 'Antoine de Saint-Exupery',
+        'genero': 'Livros de Infantil'
+    }
+    make_product('0003', 'O Pequeno Príncipe', DESCRIPTION3, Decimal('34.90'),
+                 livro, 4, metadata)
+
+    metadata = {'autor': 'Luis Fernando Verissimo', 'genero': 'Humor'}
+    make_product('0004', 'Diálogos Impossíveis', DESCRIPTION4,
+                 Decimal('32.90'), livro, 1, metadata)
+
+    metadata = {'diretor': 'Michael Haneke', 'ano_lancamento': 2013}
+    make_product('0005', 'Amor', DESCRIPTION5, Decimal('42.00'), dvd_filme,
+                 1, metadata)
+
+    metadata = {
+        'versao': '8.1',
+        'requisitos_do_sistema': '''Processador: 1 gigahertz (GHz) ou mais rápido com suporte para PAE, NX, e SSE2
+        Memória RAM: 1 gigabyte (GB) (32 bits) ou 2 GB (64-bit)
+        Espaço em HD: 16 GB (32 bits) ou 20 GB (64-bit)'''
+    }
+    make_product('0006', 'Windows 8 Pro - Versão Atualizada - PC',
+                 DESCRIPTION6, Decimal('269.00'), dvd_software, 5, metadata)
 
 
 def run():

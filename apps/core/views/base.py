@@ -7,7 +7,8 @@ class BaseView(TemplateView):
         return Category.objects.all()
 
     def get_products(self):
-        return Product.objects.all().select_related('category')
+        return Product.objects.all().select_related('category') \
+            .order_by('created')
 
     def get_base_context(self):
         cxt = {}
