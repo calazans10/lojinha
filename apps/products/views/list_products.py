@@ -1,5 +1,5 @@
 from core.views import BaseView
-from .models import Category
+from products.models import Category
 
 
 class ListProducts(BaseView):

@@ -1,5 +1,5 @@
 from core.views import BaseView
-from .models import Product
+from products.models import Product
 
 
 class ShowProduct(BaseView):

@@ -1,4 +1,4 @@
-from base import BaseView
+from core.views import BaseView
 
 
 class IndexView(BaseView):
