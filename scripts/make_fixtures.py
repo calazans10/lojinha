@@ -72,7 +72,7 @@ def make_data():
     make_product('0001', 'Paul McCartney - Paul is Live', DESCRIPTION1,
                  Decimal('22.41'), dvd_show, 3, photo, metadata)
 
-    photo = MEDIA_URL + 'img/products/bussunda.jpg'
+    photo = MEDIA_URL + 'images/bussunda.jpg'
     metadata = {'autor': 'Guilherme Fiuza', 'genero': 'Biografia'}
     make_product('0002', 'Bussunda - A vida do Casseta', DESCRIPTION2,
                  Decimal(53.90), livro, 2, photo, metadata)
