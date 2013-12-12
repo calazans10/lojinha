@@ -1,7 +1,7 @@
 from decimal import Decimal
-from django.core.management.base import BaseCommand#, CommandError
+from django.core.management.base import BaseCommand
 from django.db.models.loading import get_model
-from core.management.commands._descriptions import *
+from core.management.commands import _description
 from lojinha.settings import MEDIA_URL
 from products.models import Category, Product
 
@@ -31,8 +31,9 @@ def set_metadata(product, metadata):
         product.metadata['ano_lancamento'] = metadata['ano_lancamento']
 
     if product.category.name == 'DVD software':
+        requisitos = 'requisitos_do_sistema'
         product.metadata['versao'] = metadata['versao']
-        product.metadata['requisitos_do_sistema'] = metadata['requisitos_do_sistema']
+        product.metadata[requisitos] = metadata[requisitos]
 
     if product.category.name == 'Relógios':
         product.metadata['marca'] = metadata['marca']
@@ -72,12 +73,12 @@ def make_data():
 
     photo = MEDIA_URL + 'images/paul.jpg'
     metadata = {'artista': 'Paul McCartney', 'numero_de_musicas': 27}
-    make_product('0001', 'Paul McCartney - Paul is Live', DESCRIPTION_A,
+    make_product('0001', 'Paul McCartney - Paul is Live', _description.A,
                  Decimal('22.41'), dvd_show, 3, photo, metadata)
 
     photo = MEDIA_URL + 'images/bussunda.jpg'
     metadata = {'autor': 'Guilherme Fiuza', 'genero': 'Biografia'}
-    make_product('0002', 'Bussunda - A vida do Casseta', DESCRIPTION_B,
+    make_product('0002', 'Bussunda - A vida do Casseta', _description.B,
                  Decimal(53.90), livro, 2, photo, metadata)
 
     photo = MEDIA_URL + 'images/principe.jpg'
@@ -85,28 +86,29 @@ def make_data():
         'autor': 'Antoine de Saint-Exupery',
         'genero': 'Livros de Infantil'
     }
-    make_product('0003', 'O Pequeno Príncipe', DESCRIPTION_C, Decimal('34.90'),
-                 livro, 4, photo, metadata)
+    make_product('0003', 'O Pequeno Príncipe', _description.C,
+                 Decimal('34.90'), livro, 4, photo, metadata)
 
     photo = MEDIA_URL + 'images/verissimo.jpg'
     metadata = {'autor': 'Luis Fernando Verissimo', 'genero': 'Humor'}
-    make_product('0004', 'Diálogos Impossíveis', DESCRIPTION_D,
+    make_product('0004', 'Diálogos Impossíveis', _description.D,
                  Decimal('32.90'), livro, 1, photo, metadata)
 
     photo = MEDIA_URL + 'images/amor.jpg'
     metadata = {'diretor': 'Michael Haneke', 'ano_lancamento': 2013}
-    make_product('0005', 'Amor', DESCRIPTION_E, Decimal('42.00'), dvd_filme,
+    make_product('0005', 'Amor', _description.E, Decimal('42.00'), dvd_filme,
                  1, photo, metadata)
 
     photo = MEDIA_URL + 'images/windows.jpg'
     metadata = {
         'versao': '8.1',
-        'requisitos_do_sistema': '''Processador: 1 gigahertz (GHz) ou mais rápido com suporte para PAE, NX, e SSE2
+        'requisitos_do_sistema': '''Processador: 1 gigahertz (GHz) ou mais \
+        rápido com suporte para PAE, NX, e SSE2
         Memória RAM: 1 gigabyte (GB) (32 bits) ou 2 GB (64-bit)
         Espaço em HD: 16 GB (32 bits) ou 20 GB (64-bit)'''
     }
     make_product('0006', 'Windows 8 Pro - Versão Atualizada - PC',
-                 DESCRIPTION_F, Decimal('269.00'), dvd_software, 5, photo,
+                 _description.F, Decimal('269.00'), dvd_software, 5, photo,
                  metadata)
 
 
