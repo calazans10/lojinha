@@ -12,6 +12,8 @@ class Product(TimeStampedModel):
     category = models.ForeignKey('Category', related_name='products',
                                  verbose_name='Categoria')
     quantity = models.IntegerField('Quantidade em estoque')
+    photo = models.ImageField('Foto', upload_to='images/',
+                              null=True, blank=True)
     metadata = generic.GenericRelation(MetaData)
 
     def __str__(self):

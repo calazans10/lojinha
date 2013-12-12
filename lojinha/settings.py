@@ -3,7 +3,7 @@ import sys
 from unipath import Path
 
 
-BASE_DIR = Path(__file__).parent.parent
+BASE_DIR = Path(__file__).parent
 
 sys.path.append(BASE_DIR.child('apps'))
 
@@ -15,6 +15,8 @@ SECRET_KEY = os.environ.get('LOJINHASECRETKEY')
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+
+SERVE_MEDIA = True
 
 ALLOWED_HOSTS = []
 
@@ -82,3 +84,6 @@ USE_TZ = True
 
 STATICFILES_DIRS = (BASE_DIR.child('static'),)
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR.child('media')
