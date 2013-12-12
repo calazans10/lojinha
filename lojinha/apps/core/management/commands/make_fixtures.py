@@ -1,9 +1,9 @@
 from decimal import Decimal
 from django.core.management.base import BaseCommand
 from django.db.models.loading import get_model
-from core.management.commands import _description
 from lojinha.settings import MEDIA_URL
 from products.models import Category, Product
+from core.management.commands import _description
 
 
 def clear_model(app, model_cls):
