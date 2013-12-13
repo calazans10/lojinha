@@ -1,0 +1,13 @@
+{% if not '/products/list_itens' in request.path %}
+    {% if count_itens %}
+        <a href="{% url 'list_itens' %}">
+            <div class="panel callout radius">
+                <h6>{{ count_itens }} produto no carrinho</h6>
+            </div>
+        </a>
+    {% else %}
+        <div class="panel callout radius">
+            <h6>Nenhum produto no carrinho</h6>
+        </div>
+    {% endif %}
+{% endif %}

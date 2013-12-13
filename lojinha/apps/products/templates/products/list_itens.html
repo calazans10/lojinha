@@ -1,0 +1,39 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  <div class="large-8 columns">
+    <div class="row">
+    <h2>Pedido</h2>
+    {% if itens %}
+        <table>
+          <thead>
+            <tr>
+              <th width="400">Produto</th>
+              <th width="150">Quantidade</th>
+              <th width="100">Preço</th>
+            </tr>
+          </thead>
+          {% for item in itens %}
+            <tbody>
+              <tr>
+                <td>{{ item.product.title }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>R$ {{ item.price }}</td>
+              </tr>
+            </tbody>
+          {% endfor %}
+          <tfoot>
+            <tr>
+              <td colspan="2" class="total-price">Total:</td>
+              <td>R$ {{ sum_price }}</td>
+            </tr>
+          </tfoot>
+        </table>
+    {% else %}
+        <p>Você não possui nenhum item em seu carrinho.</p>
+    {% endif %}
+    <a href="#" class="button">Finalizar pedido</a>
+    <a href="#" class="button alert">Cancelar pedido</a>
+    </div>
+  </div>
+{% endblock content %}
