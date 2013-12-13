@@ -6,7 +6,7 @@
       {% recursetree nodes %}
         <li>
           {% if node.name == 'DVD' %}
-            <strong>{{ node.name }}</strong>
+            <strong style="color: #0079a1;">{{ node.name }}</strong>
           {% else %}
             <a href="{% url 'list_products' node.id %}" {% if node.id == category.id %}class="active"{% endif %}>{{ node.name }}</a>
           {% endif %}

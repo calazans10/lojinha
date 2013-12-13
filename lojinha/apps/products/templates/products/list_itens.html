@@ -3,7 +3,7 @@
 {% block content %}
   <div class="large-8 columns">
     <div class="row">
-    <h2>Pedido</h2>
+    <h2>Itens do Pedido</h2>
     {% if itens %}
         <table>
           <thead>
@@ -29,8 +29,6 @@
             </tr>
           </tfoot>
         </table>
-    {% else %}
-        <p>Você não possui nenhum item em seu carrinho.</p>
     {% endif %}
     <a href="#" class="button">Finalizar pedido</a>
     <a href="#" class="button alert">Cancelar pedido</a>
