@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import redirect
 from products.models import Product, Item
 

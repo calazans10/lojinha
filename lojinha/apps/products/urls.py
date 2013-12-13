@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.conf.urls import patterns, url
 from products.views import ShowProduct, ListProducts, ListItens
 

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import sys
 from unipath import Path
@@ -67,7 +68,7 @@ ROOT_URLCONF = 'lojinha.urls'
 WSGI_APPLICATION = 'lojinha.wsgi.application'
 
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+DATABASES['default'] = dj_database_url.config()
 
 # POSTGRESPASSWORD = os.environ.get('POSTGRESPASSWORD')
 

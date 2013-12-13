@@ -1,9 +1,11 @@
-A = '''Gravado ao vivo durante diferentes datas da turnê \
+# -*- coding: utf-8 -*-
+
+A = u'''Gravado ao vivo durante diferentes datas da turnê \
 "New World Tour" em 1993, este DVD traz o genial Paul McCartney interpretando \
 os grandes sucessos de sua carreira, além de hits que foram consagrados pelos \
 inesquecíveis The Beatles.'''
 
-B = '''Quando a carreira dos futuros integrantes do Casseta & \
+B = u'''Quando a carreira dos futuros integrantes do Casseta & \
 Planeta começou a engrenar, Claudio Manoel perguntou para Bussunda que sonho \
 de consumo ele ia realizar primeiro se ficasse rico. "Eu quero ter 40 mil \
 pares de sandálias Havaianas", afirmou o humorista, sem hesitar.
@@ -26,13 +28,13 @@ O que emerge do livro é um retrato definitivo de um personagem único, que \
 arrebatou o país com seu jeito anárquico e, ao mesmo tempo, extremamente \
 doce.'''
 
-C = '''Essa edição especial apresenta ilustrações originais da 1º \
+C = u'''Essa edição especial apresenta ilustrações originais da 1º \
 edição americana do livro, com capa flexível e acabamento em hot \
 stamp. Além disso, conta com uma tradução especial feita por Ferreira \
 Goulart. É um livro para colecionadores e amantes de uma das histórias mais \
 famosas e encantadoras do mundo.'''
 
-D = '''Drácula e Batman discutem no asilo. Robespierre tenta \
+D = u'''Drácula e Batman discutem no asilo. Robespierre tenta \
 subornar o carrasco. Goya e Picasso conversam sob o sol da Côte d’Azur. \
 Juvenal planeja matar a mulher, Marinei, que o despreza. A recém-casada \
 Heleninha pede conselhos ao urso de pelúcia.
@@ -46,7 +48,7 @@ comunicar acaba é “estrumbicando”. Nas crônicas reunidas neste volume, \
 Luis Fernando Verissimo escreve sobre impossibilidade, incomunicabilidade e \
 mal-entendidos. Escreve, enfim, sobre a vida.'''
 
-E = '''Amor, o filme mais premiado e aclamado do polêmico diretor \
+E = u'''Amor, o filme mais premiado e aclamado do polêmico diretor \
 Michael Haneke, conta a história de Georges e Anne, um casal de músicos \
 aposentados que tem sua rotina transformada quando Anne sofre um derrame e \
 fica com um lado do corpo paralisado. O casal de idosos passa por graves \
@@ -54,7 +56,7 @@ obstáculos, que colocarão o seu amor em teste. A situação complica-se ainda 
 mais quando Georges decide poupar a filha do casal da dura realidade que é \
 ver uma pessoa que se ama morrer aos poucos.'''
 
-F = '''O Windows 8 foi reimaginado para você. Ele traz novidades \
+F = u'''O Windows 8 foi reimaginado para você. Ele traz novidades \
 incríveis para que você tenha  uma experiência totalmente personalizável, \
 conectada, rápida e harmoniosa no seu computador. Conheça as  principais \
 novidades que fazem do Windows 8 a escolha ideal para quem quer comprar um \
@@ -68,12 +70,12 @@ uma nova experiência única e incrível. E na Windows Store você encontrará u
 mundo de novos aplicativos prontos para serem instalados. Internet Explorer \
 10 - Um navegador totalmente novo.'''
 
-G = '''Fragrância encantadora e fascinante pela combinação do buquê floral \
+G = u'''Fragrância encantadora e fascinante pela combinação do buquê floral \
 com óleos essenciais exclusivos Natura. Seu fundo é formado por notas \
 aveludadas e cremosas de âmbar e madeira.'''
 
-H = '''O Relógio Nike+ Sportwatch GPS é ideal para o atleta utilizar durante \
+H = u'''O Relógio Nike+ Sportwatch GPS é ideal para o atleta utilizar durante \
 as corridas ou na academia. É fácil de usar, e possui tela sensível ao toque \
 que resiste a água, perfeito para os dias de chuva.'''
 
-I = 'Relógio Puma Cloud, super confortável e bonito.'
+I = u'Relógio Puma Cloud, super confortável e bonito.'
