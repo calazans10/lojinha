@@ -15,7 +15,7 @@ def clear_data():
     clear_model('auth', 'User')
     clear_model('products', 'Category')
     clear_model('products', 'Product')
-
+    clear_model('products', 'Item')
 
 def set_metadata(product, metadata):
     if product.category.name == 'Livro':
