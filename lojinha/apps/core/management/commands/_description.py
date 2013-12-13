@@ -67,3 +67,13 @@ e mensagens que ajudam você a realizar suas tarefas essenciais e trabalhar \
 uma nova experiência única e incrível. E na Windows Store você encontrará um \
 mundo de novos aplicativos prontos para serem instalados. Internet Explorer \
 10 - Um navegador totalmente novo.'''
+
+G = '''Fragrância encantadora e fascinante pela combinação do buquê floral \
+com óleos essenciais exclusivos Natura. Seu fundo é formado por notas \
+aveludadas e cremosas de âmbar e madeira.'''
+
+H = '''O Relógio Nike+ Sportwatch GPS é ideal para o atleta utilizar durante \
+as corridas ou na academia. É fácil de usar, e possui tela sensível ao toque \
+que resiste a água, perfeito para os dias de chuva.'''
+
+I = 'Relógio Puma Cloud, super confortável e bonito.'

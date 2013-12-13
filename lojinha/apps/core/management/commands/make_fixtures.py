@@ -17,6 +17,7 @@ def clear_data():
     clear_model('products', 'Product')
     clear_model('products', 'Item')
 
+
 def set_metadata(product, metadata):
     if product.category.name == 'Livro':
         product.metadata['autor'] = metadata['autor']
@@ -110,6 +111,21 @@ def make_data():
     make_product('0006', 'Windows 8 Pro - Versão Atualizada - PC',
                  _description.F, Decimal('269.00'), dvd_software, 5, photo,
                  metadata)
+
+    photo = MEDIA_URL + 'images/perfume.jpg'
+    metadata = {'marca': 'Natura', 'quantidade_em_ml': '100 ml'}
+    make_product('0007', 'Deo Parfum Essencial Exclusivo', _description.G,
+                 Decimal('149.00'), perfume, 1, photo, metadata)
+
+    photo = MEDIA_URL + 'images/relogiod.jpg'
+    metadata = {'marca': 'Nike', 'tipo': 'Digital'}
+    make_product('0008', 'Relógio Nike+ Sportwatch GPS', _description.H,
+                 Decimal('699.00'), relogios, 1, photo, metadata)
+
+    photo = MEDIA_URL + 'images/relogioa.jpg'
+    metadata = {'marca': 'Puma', 'tipo': 'Analógico'}
+    make_product('0009', 'Relógio Puma Cloud', _description.I,
+                 Decimal('399.00'), relogios, 1, photo, metadata)
 
 
 class Command(BaseCommand):
