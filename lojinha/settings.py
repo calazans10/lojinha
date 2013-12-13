@@ -7,8 +7,7 @@ BASE_DIR = Path(__file__).parent
 
 sys.path.append(BASE_DIR.child('apps'))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 SECRET_KEY = os.environ.get('LOJINHASECRETKEY')
 
@@ -67,18 +66,21 @@ ROOT_URLCONF = 'lojinha.urls'
 
 WSGI_APPLICATION = 'lojinha.wsgi.application'
 
-POSTGRESPASSWORD = os.environ.get('POSTGRESPASSWORD')
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'lojinha_db',
-        'USER': 'postgres',
-        'PASSWORD': POSTGRESPASSWORD,
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+# POSTGRESPASSWORD = os.environ.get('POSTGRESPASSWORD')
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'lojinha_db',
+#         'USER': 'postgres',
+#         'PASSWORD': POSTGRESPASSWORD,
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -95,6 +97,7 @@ USE_TZ = True
 
 STATICFILES_DIRS = (BASE_DIR.child('static'),)
 STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.child('media')
