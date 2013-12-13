@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from lojinha import settings
 from django.conf.urls import patterns, include, url
 

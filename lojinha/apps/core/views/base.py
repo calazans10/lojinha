@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.views.generic import TemplateView
 from products.models import Product, Category, Item
 
