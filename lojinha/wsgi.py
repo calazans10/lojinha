@@ -1,14 +1,8 @@
-"""
-WSGI config for lojinha project.
-
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/
-"""
-
 import os
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "lojinha.settings.local")
+
+
+DJANGO_SETTINGS = os.environ.get('DJANGO_SETTINGS')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", DJANGO_SETTINGS)
 
 from django.core.wsgi import get_wsgi_application
 from dj_static import Cling
