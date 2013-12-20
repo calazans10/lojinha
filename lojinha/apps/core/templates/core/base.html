@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!doctype html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" lang="pt-BR" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
@@ -6,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lojinha</title>
 
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/foundation.css" />
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" />
-    <script src="{{ STATIC_URL }}js/modernizr.js"></script>
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}" />
+    <link rel="stylesheet" href="{% static "css/foundation.css" %}" />
+    <link rel="stylesheet" href="{% static "css/style.css" %}" />
+    <script src="{% static "js/modernizr.js" %}"></script>
 </head>
 <body>
    <div class="row" style="padding-top: 40px;">
@@ -24,7 +25,7 @@
     </div>
   </div>
 
-  <script src="{{ STATIC_URL }}js/jquery.js"></script>
-  <script src="{{ STATIC_URL }}js/foundation/foundation.js"></script>
+  <script src="{% static "js/jquery.js" %}"></script>
+  <script src="{% static "js/foundation/foundation.js" %}"></script>
 </body>
 </html>
