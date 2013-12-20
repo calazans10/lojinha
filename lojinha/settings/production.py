@@ -3,7 +3,7 @@ import dj_database_url
 from .base import *
 
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {'default': dj_database_url.config()}

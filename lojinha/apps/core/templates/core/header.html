@@ -1,8 +1,9 @@
 {% load mptt_tags %}
+{% load staticfiles %}
 
 <div class="large-4 small-12 columns">
     <h1 class="header-page">
-        <a href="/"><img src="{{STATIC_URL}}img/logo.png"></a>
+        <a href="/"><img src="{% static "img/logo.png" %}"></a>
     </h1>
 
     {% include "core/menu.html" %}

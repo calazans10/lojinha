@@ -2,7 +2,7 @@
 from decimal import Decimal
 from django.core.management.base import BaseCommand
 from django.db.models.loading import get_model
-from lojinha.settings import MEDIA_URL
+from django.conf import settings
 from products.models import Category, Product
 from core.management.commands import _description
 
@@ -73,17 +73,17 @@ def make_data():
     relogios = make_category(u'Relógios')
     perfume = make_category(u'Perfume')
 
-    photo = MEDIA_URL + 'images/paul.jpg'
+    photo = settings.MEDIA_URL + 'images/paul.jpg'
     metadata = {'artista': u'Paul McCartney', 'numero_de_musicas': 27}
     make_product('0001', u'Paul McCartney - Paul is Live', _description.A,
                  Decimal('22.41'), dvd_show, 3, photo, metadata)
 
-    photo = MEDIA_URL + 'images/bussunda.jpg'
+    photo = settings.MEDIA_URL + 'images/bussunda.jpg'
     metadata = {'autor': u'Guilherme Fiuza', 'genero': u'Biografia'}
     make_product('0002', u'Bussunda - A vida do Casseta', _description.B,
                  Decimal(53.90), livro, 2, photo, metadata)
 
-    photo = MEDIA_URL + 'images/principe.jpg'
+    photo = settings.MEDIA_URL + 'images/principe.jpg'
     metadata = {
         'autor': u'Antoine de Saint-Exupery',
         'genero': u'Livros de Infantil'
@@ -91,17 +91,17 @@ def make_data():
     make_product('0003', u'O Pequeno Príncipe', _description.C,
                  Decimal('34.90'), livro, 4, photo, metadata)
 
-    photo = MEDIA_URL + 'images/verissimo.jpg'
+    photo = settings.MEDIA_URL + 'images/verissimo.jpg'
     metadata = {'autor': u'Luis Fernando Verissimo', 'genero': u'Humor'}
     make_product('0004', u'Diálogos Impossíveis', _description.D,
                  Decimal('32.90'), livro, 1, photo, metadata)
 
-    photo = MEDIA_URL + 'images/amor.jpg'
+    photo = settings.MEDIA_URL + 'images/amor.jpg'
     metadata = {'diretor': u'Michael Haneke', 'ano_lancamento': 2013}
     make_product('0005', u'Amor', _description.E, Decimal('42.00'), dvd_filme,
                  1, photo, metadata)
 
-    photo = MEDIA_URL + 'images/windows.jpg'
+    photo = settings.MEDIA_URL + 'images/windows.jpg'
     metadata = {
         'versao': '8.1',
         'requisitos_do_sistema': u'''Processador: 1 gigahertz (GHz) ou mais \
@@ -113,17 +113,17 @@ def make_data():
                  _description.F, Decimal('269.00'), dvd_software, 5, photo,
                  metadata)
 
-    photo = MEDIA_URL + 'images/perfume.jpg'
+    photo = settings.MEDIA_URL + 'images/perfume.jpg'
     metadata = {'marca': u'Natura', 'quantidade_em_ml': '100 ml'}
     make_product('0007', u'Deo Parfum Essencial Exclusivo', _description.G,
                  Decimal('149.00'), perfume, 1, photo, metadata)
 
-    photo = MEDIA_URL + 'images/relogiod.jpg'
+    photo = settings.MEDIA_URL + 'images/relogiod.jpg'
     metadata = {'marca': u'Nike', 'tipo': u'Digital'}
     make_product('0008', u'Relógio Nike+ Sportwatch GPS', _description.H,
                  Decimal('699.00'), relogios, 1, photo, metadata)
 
-    photo = MEDIA_URL + 'images/relogioa.jpg'
+    photo = settings.MEDIA_URL + 'images/relogioa.jpg'
     metadata = {'marca': u'Puma', 'tipo': u'Analógico'}
     make_product('0009', u'Relógio Puma Cloud', _description.I,
                  Decimal('399.00'), relogios, 1, photo, metadata)
