@@ -1,4 +1,5 @@
 {% extends 'core/base.html' %}
+{% load val_tags %}
 
 {% block content %}
   <div class="large-8 columns">
@@ -18,14 +19,14 @@
               <tr>
                 <td>{{ item.product.title }}</td>
                 <td>{{ item.quantity }}</td>
-                <td>R$ {{ item.price }}</td>
+                <td>R$ {{ item.price|money }}</td>
               </tr>
             </tbody>
           {% endfor %}
           <tfoot>
             <tr>
               <td colspan="2" class="total-price">Total:</td>
-              <td>R$ {{ sum_price }}</td>
+              <td>R$ {{ sum_price|money }}</td>
             </tr>
           </tfoot>
         </table>

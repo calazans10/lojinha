@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from core.views import BaseView
 from products.models import Product
+from core.views import BaseView
 
 
 class ShowProduct(BaseView):

@@ -1,4 +1,5 @@
 {% extends "core/base.html" %}
+{% load val_tags %}
 
 {% block content %}
     <div class="large-8 columns">
@@ -8,7 +9,7 @@
             <a href="{% url 'add_itens' product.id %}" class="button">Comprar</a>
             <ul class="list-info-products">
                 <li><strong>Código:</strong> {{ product.code }}</li>
-                <li><strong>Preço:</strong> R$ {{ product.price }}</li>
+                <li><strong>Preço:</strong> R$ {{ product.price|money }}</li>
                 <li class="description"><strong>Descrição:</strong> {{ product.description }}</li>
                 {% include "products/category.html" %}
                 {% include "products/metadata.html" %}
