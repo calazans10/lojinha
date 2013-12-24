@@ -3,8 +3,8 @@ from decimal import Decimal
 from django.core.management.base import BaseCommand
 from django.db.models.loading import get_model
 from django.conf import settings
-from products.models import Category, Product
 from core.management.commands import _description
+from products.models import Category, Product
 
 
 def clear_model(app, model_cls):
