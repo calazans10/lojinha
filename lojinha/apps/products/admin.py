@@ -10,6 +10,12 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ['code', 'title', 'description']
     inlines = [MetaDataTabularInline]
 
+    class Media:
+        js = [
+            '/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js',
+            '/static/grappelli/tinymce_setup/tinymce_setup.js',
+        ]
+
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'parent')
