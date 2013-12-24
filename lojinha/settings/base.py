@@ -19,6 +19,7 @@ ALLOWED_HOSTS = []
 INTERNAL_IPS = ('127.0.0.1',)
 
 INSTALLED_APPS = (
+    'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,3 +76,5 @@ STATIC_ROOT = 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.child('media')
+
+GRAPPELLI_ADMIN_TITLE = 'Lojinha'
