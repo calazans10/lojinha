@@ -5,7 +5,7 @@ deps:
 	pip install -r requirements.txt
 
 setup: clean deps
-	rm -rf lojinha_db
+	python manage.py reset_db
 	python manage.py syncdb --noinput
 	python manage.py migrate
 	python manage.py make_fixtures
