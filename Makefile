@@ -2,7 +2,7 @@ clean:
 	find ./ -name "*.pyc" -delete
 
 deps:
-	pip install -r requirements.txt
+	pip install -r requirements/local.txt
 
 setup: clean deps
 	python manage.py reset_db

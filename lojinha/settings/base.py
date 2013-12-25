@@ -8,15 +8,17 @@ BASE_DIR = Path(__file__).parent.parent
 
 sys.path.append(BASE_DIR.child('apps'))
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
 SECRET_KEY = os.environ.get('LOJINHASECRETKEY')
 
 SERVE_MEDIA = True
 
 ALLOWED_HOSTS = []
 
-INTERNAL_IPS = ('127.0.0.1',)
+ADMINS = (
+    ('Jeferson Farias Calazans', 'calazans10@gmail.com'),
+)
+
+MANAGERS = ADMINS
 
 INSTALLED_APPS = (
     'grappelli',
@@ -28,7 +30,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'django_extensions',
-    'debug_toolbar',
     'model_utils',
     'metadata',
     'south',
@@ -46,7 +47,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -64,8 +64,8 @@ ROOT_URLCONF = 'lojinha.urls'
 
 WSGI_APPLICATION = 'lojinha.wsgi.application'
 
+TIME_ZONE = 'America/Sao_Paulo'
 LANGUAGE_CODE = 'pt-br'
-TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
