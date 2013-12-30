@@ -17,11 +17,11 @@ class Product(TimeStampedModel):
                               null=True, blank=True)
     metadata = generic.GenericRelation(MetaData)
 
-    def __unicode__(self):
-        return self.title
-
     class Meta:
         app_label = 'products'
         db_table = 'product'
         verbose_name = u'Produto'
         verbose_name_plural = u'Produtos'
+
+    def __unicode__(self):
+        return self.title

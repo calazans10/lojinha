@@ -9,9 +9,6 @@ class Category(MPTTModel, TimeStampedModel):
     parent = TreeForeignKey('self', null=True, blank=True,
                             related_name='children', verbose_name=u"Pai")
 
-    def __unicode__(self):
-        return self.name
-
     class MPTTMeta:
         order_insertion_by = ['name']
 
@@ -20,3 +17,6 @@ class Category(MPTTModel, TimeStampedModel):
         db_table = 'category'
         verbose_name = u'Categoria'
         verbose_name_plural = u'Categorias'
+
+    def __unicode__(self):
+        return self.name
