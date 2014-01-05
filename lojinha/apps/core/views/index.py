@@ -8,7 +8,7 @@ class IndexView(BaseView):
     def get(self, request, *args, **kwargs):
         products = self.get_products()
 
-        cxt = self.get_base_context()
+        cxt = self.get_context_data()
         cxt['products'] = products
 
         return self.render_to_response(cxt)

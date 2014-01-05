@@ -9,7 +9,7 @@ class ListItens(BaseView):
     def get(self, request, *args, **kwars):
         itens = self.get_itens()
 
-        cxt = self.get_base_context()
+        cxt = self.get_context_data()
         cxt['itens'] = itens
         cxt['sum_price'] = itens.aggregate(sum=Sum('price'))['sum']
 
