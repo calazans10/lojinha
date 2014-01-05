@@ -9,11 +9,11 @@ class Client(TimeStampedModel):
     born_on = models.DateField(u'Data de nascimento')
     addresses = models.ManyToManyField('Address', verbose_name=u"Endereços")
 
-    def __unicode__(self):
-        return self.user.get_full_name()
-
     class Meta:
         app_label = 'clients'
         db_table = 'client'
         verbose_name = u'Cliente'
         verbose_name_plural = u'Clientes'
+
+    def __unicode__(self):
+        return self.user.get_full_name()

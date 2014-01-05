@@ -8,14 +8,14 @@ class BaseView(TemplateView):
         return Category.objects.all()
 
     def get_products(self):
-        return Product.objects.all().select_related('category') \
-            .order_by('created')
+        qs = Product.objects.all().select_related('category')
+        return qs.order_by('created')
 
     def get_itens(self):
         return Item.objects.all().select_related('product')
 
-    def get_base_context(self):
-        cxt = {}
+    def get_context_data(self, **kwargs):
+        cxt = super(BaseView, self).get_context_data(**kwargs)
         cxt['nodes'] = self.get_categories()
         cxt['count_itens'] = self.get_itens().count()
 
