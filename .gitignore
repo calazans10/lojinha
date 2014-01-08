@@ -4,3 +4,4 @@ venv
 staticfiles
 lojinha_db
 .coverage
+/htmlcov
